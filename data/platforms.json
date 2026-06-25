@@ -25,7 +25,7 @@
     "id": "psc-atlas",
     "title": "PSC Atlas 管理平台",
     "subtitle": "PSC Atlas",
-    "description": "彙整 PSC 缺失、滯留與 GFD 相關資料，作為案例查詢、風險辨識與船隊防範改善的分析入口。",
+    "description": "彙整業界 PSC 滯留案例，分析判斷不同區域的 PSC 檢查重點和趨勢。",
     "url": "https://ttwonder.github.io/psc-atlas/",
     "image": "assets/screenshots/psc-atlas.png",
     "badge": "已上線",

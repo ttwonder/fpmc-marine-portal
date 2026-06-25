@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>系統維護｜台塑海技管理平台</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #071729;
+      --blue: #0f62fe;
+      --blue-hover: #0043ce;
+      --text: #161616;
+      --muted: #525252;
+      --line: #c6c6c6;
+      --surface: #f4f4f4;
+      --warning-bg: #fff8e1;
+      --warning-line: #d7a948;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'IBM Plex Sans', 'Noto Sans TC', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      color: var(--text);
+      background: #ffffff;
+    }
+    a { color: inherit; text-decoration: none; }
+    .topbar {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      background: var(--navy);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 600; }
+    .brand-logo { width: 40px; height: 32px; object-fit: contain; display: block; background: #fff; }
+    .topbar nav { display: flex; gap: 8px; color: #c6c6c6; font-size: 14px; }
+    .topbar nav a { min-height: 40px; padding: 12px 16px; display: inline-flex; align-items: center; }
+    .topbar nav a:hover { color: #fff; background: rgba(255,255,255,.08); }
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 40px 32px 64px; }
+    .kicker { color: var(--blue); font-family: 'IBM Plex Mono', monospace; font-size: 13px; margin-bottom: 8px; }
+    h1 { margin: 0; font-size: clamp(34px, 4vw, 52px); font-weight: 300; line-height: 1.16; }
+    .intro { margin: 16px 0 24px; color: var(--muted); line-height: 1.75; max-width: 820px; }
+    .notice { border-left: 4px solid var(--warning-line); background: var(--warning-bg); color: #5f4500; padding: 14px 16px; line-height: 1.7; margin: 24px 0 32px; }
+    .layout { display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 24px; align-items: start; }
+    .panel { border: 1px solid var(--line); background: #fff; }
+    .panel h2 { margin: 0; padding: 18px 20px; border-bottom: 1px solid var(--line); font-size: 20px; font-weight: 600; }
+    .list { display: grid; gap: 1px; background: var(--line); }
+    .list button { text-align: left; border: 0; background: #fff; padding: 16px 18px; font: inherit; cursor: pointer; }
+    .list button:hover, .list button.active { background: #edf5ff; }
+    .list strong { display: block; margin-bottom: 4px; }
+    .list span { color: var(--muted); font-size: 13px; }
+    form { padding: 20px; display: grid; gap: 16px; }
+    label { display: grid; gap: 7px; color: var(--muted); font-size: 13px; }
+    input, textarea, select {
+      width: 100%;
+      border: 0;
+      border-bottom: 2px solid var(--line);
+      background: var(--surface);
+      color: var(--text);
+      font: inherit;
+      padding: 12px 14px;
+      outline: none;
+    }
+    textarea { min-height: 96px; resize: vertical; line-height: 1.6; }
+    input:focus, textarea:focus, select:focus { border-bottom-color: var(--blue); }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 4px; }
+    .btn { border: 1px solid transparent; background: var(--navy); color: #fff; min-height: 44px; padding: 11px 16px; font-weight: 600; cursor: pointer; }
+    .btn:hover { background: var(--blue); }
+    .btn.primary { background: var(--blue); }
+    .btn.primary:hover { background: var(--blue-hover); }
+    .btn.ghost { background: #fff; color: var(--blue); border-color: var(--blue); }
+    .btn.danger { background: #da1e28; }
+    .output { margin-top: 24px; }
+    pre { white-space: pre-wrap; word-break: break-word; background: #161616; color: #f4f4f4; padding: 18px; min-height: 180px; max-height: 360px; overflow: auto; font-family: 'IBM Plex Mono', monospace; font-size: 13px; }
+    .small { color: var(--muted); font-size: 13px; line-height: 1.6; }
+    @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } .grid-2 { grid-template-columns: 1fr; } }
+    @media (max-width: 680px) { .topbar { padding: 0 16px; } .wrap { padding: 28px 18px 48px; } .topbar nav { display: none; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/logo/fpmc-logo.png" alt="FPMC Logo" />
+      <span>台塑海技管理平台</span>
+    </a>
+    <nav>
+      <a href="index.html">回到入口首頁</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <div class="kicker">PORTAL MAINTENANCE</div>
+    <h1>系統維護</h1>
+    <p class="intro">可用這個頁面新增、修改、刪除入口卡片資料，完成後下載新的 <code>platforms.json</code>。這是免費靜態網站的安全維護方式，不會把 GitHub 密碼或權杖放在網頁裡。</p>
+    <div class="notice">操作方式：先在左側選平台，在右側修改資料；若要新增平台，按「新增空白平台」。完成後按「下載 platforms.json」，再把下載的檔案上傳覆蓋 GitHub repo 裡的 <code>data/platforms.json</code>。</div>
+
+    <div class="layout">
+      <section class="panel">
+        <h2>平台清單</h2>
+        <div class="list" id="platformList"></div>
+      </section>
+
+      <section class="panel">
+        <h2>平台資料</h2>
+        <form id="platformForm">
+          <div class="grid-2">
+            <label>ID<input id="id" required placeholder="例如 psc-atlas"></label>
+            <label>狀態
+              <select id="status">
+                <option value="online">online / 已上線</option>
+                <option value="restricted">restricted / 內部使用</option>
+              </select>
+            </label>
+          </div>
+          <div class="grid-2">
+            <label>平台名稱<input id="title" required></label>
+            <label>英文副標<input id="subtitle"></label>
+          </div>
+          <label>平台說明<textarea id="description"></textarea></label>
+          <label>網址<input id="url" type="url" required></label>
+          <label>快照圖片路徑<input id="image" placeholder="assets/screenshots/example.png"></label>
+          <div class="grid-2">
+            <label>標籤<input id="badge" placeholder="已上線 / 內部使用"></label>
+            <label>分類文字<input id="meta" placeholder="PSC · 缺失案例"></label>
+          </div>
+          <div class="actions">
+            <button class="btn primary" type="submit">套用修改</button>
+            <button class="btn ghost" type="button" id="addButton">新增空白平台</button>
+            <button class="btn danger" type="button" id="deleteButton">刪除此平台</button>
+            <button class="btn" type="button" id="downloadButton">下載 platforms.json</button>
+          </div>
+          <p class="small">快照圖片仍需另外放到 repo 的 <code>assets/screenshots/</code> 資料夾中，並讓上方「快照圖片路徑」對應到該檔名。</p>
+        </form>
+      </section>
+    </div>
+
+    <section class="output">
+      <h2>即時 JSON 預覽</h2>
+      <pre id="jsonPreview"></pre>
+    </section>
+  </main>
+
+  <script>
+    let platforms = [];
+    let selectedIndex = 0;
+    const fields = ['id', 'title', 'subtitle', 'description', 'url', 'image', 'badge', 'status', 'meta'];
+    const list = document.querySelector('#platformList');
+    const preview = document.querySelector('#jsonPreview');
+
+    function byId(id) { return document.getElementById(id); }
+    function current() { return platforms[selectedIndex]; }
+
+    function renderList() {
+      list.replaceChildren();
+      platforms.forEach((platform, index) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = index === selectedIndex ? 'active' : '';
+        const title = document.createElement('strong');
+        title.textContent = platform.title || '(未命名平台)';
+        const url = document.createElement('span');
+        url.textContent = platform.url || '';
+        button.append(title, url);
+        button.addEventListener('click', () => { selectedIndex = index; renderAll(); });
+        list.append(button);
+      });
+    }
+
+    function fillForm() {
+      const platform = current() || {};
+      fields.forEach(field => { byId(field).value = platform[field] || ''; });
+    }
+
+    function readForm() {
+      return Object.fromEntries(fields.map(field => [field, byId(field).value.trim()]));
+    }
+
+    function renderPreview() {
+      preview.textContent = JSON.stringify(platforms, null, 2);
+    }
+
+    function renderAll() {
+      if (!platforms.length) platforms.push({ id: 'new-platform', title: '新平台', subtitle: '', description: '', url: '', image: 'assets/screenshots/new-platform.png', badge: '已上線', status: 'online', meta: '' });
+      selectedIndex = Math.max(0, Math.min(selectedIndex, platforms.length - 1));
+      renderList();
+      fillForm();
+      renderPreview();
+    }
+
+    document.querySelector('#platformForm').addEventListener('submit', event => {
+      event.preventDefault();
+      platforms[selectedIndex] = readForm();
+      renderAll();
+    });
+
+    byId('addButton').addEventListener('click', () => {
+      platforms.push({ id: 'new-platform', title: '新平台', subtitle: '', description: '', url: 'https://', image: 'assets/screenshots/new-platform.png', badge: '已上線', status: 'online', meta: '' });
+      selectedIndex = platforms.length - 1;
+      renderAll();
+    });
+
+    byId('deleteButton').addEventListener('click', () => {
+      if (!current()) return;
+      if (!confirm(`確定刪除「${current().title || current().id}」？`)) return;
+      platforms.splice(selectedIndex, 1);
+      selectedIndex = Math.max(0, selectedIndex - 1);
+      renderAll();
+    });
+
+    byId('downloadButton').addEventListener('click', () => {
+      platforms[selectedIndex] = readForm();
+      const blob = new Blob([JSON.stringify(platforms, null, 2) + '\n'], { type: 'application/json;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'platforms.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      renderAll();
+    });
+
+    fetch('data/platforms.json', { cache: 'no-store' })
+      .then(response => response.json())
+      .then(data => { platforms = Array.isArray(data) ? data : []; renderAll(); })
+      .catch(() => { platforms = []; renderAll(); });
+  </script>
+</body>
+</html>

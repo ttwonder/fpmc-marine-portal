@@ -12,7 +12,9 @@
 
 ## 如何新增平台
 
-編輯 `data/platforms.json`，新增一筆資料：
+可以先打開 `maintenance.html` 使用「系統維護」介面新增、修改或刪除平台資料，完成後下載新的 `platforms.json` 並覆蓋 `data/platforms.json`。
+
+也可以直接編輯 `data/platforms.json`，新增一筆資料：
 
 ```json
 {

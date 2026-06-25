@@ -67,15 +67,12 @@
       white-space: nowrap;
     }
 
-    .brand-mark {
-      width: 28px;
-      height: 28px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--marine-gold), #f5df96);
-      color: var(--marine-navy);
-      font-family: 'IBM Plex Mono', monospace;
-      font-weight: 600;
+    .brand-logo {
+      width: 40px;
+      height: 32px;
+      object-fit: contain;
+      display: block;
+      background: #ffffff;
     }
 
     .topbar nav {
@@ -405,12 +402,12 @@
 <body>
   <header class="topbar" aria-label="網站導覽列">
     <a class="brand" href="#systems" aria-label="回到平台入口">
-      <span class="brand-mark">FM</span>
+      <img class="brand-logo" src="assets/logo/fpmc-logo.png" alt="FPMC Logo" />
       <span>台塑海技管理平台</span>
     </a>
     <nav aria-label="主要導覽">
       <a href="#systems">系統入口</a>
-      <a href="#maintenance">維護方式</a>
+      <a href="maintenance.html">系統維護</a>
     </nav>
   </header>
   <main>
@@ -437,7 +434,7 @@
           <div>
             <div class="section-kicker">MAINTENANCE</div>
             <h2>後續新增與修改方式</h2>
-            <p>這一版採用免費靜態網站架構。平台資料集中放在 <code>data/platforms.json</code>，網站快照放在 <code>assets/screenshots/</code>，日後維護簡單清楚。</p>
+            <p>這一版採用免費靜態網站架構。平台資料集中放在 <code>data/platforms.json</code>，網站快照放在 <code>assets/screenshots/</code>。也可以進入 <a href="maintenance.html">系統維護頁</a> 用界面編輯並下載新的 JSON。</p>
           </div>
         </div>
         <div class="maintenance-grid">
@@ -493,7 +490,7 @@
         id: 'psc-atlas',
         title: 'PSC Atlas 管理平台',
         subtitle: 'PSC Atlas',
-        description: '彙整 PSC 缺失、滯留與 GFD 相關資料，作為案例查詢、風險辨識與船隊防範改善的分析入口。',
+        description: '彙整業界 PSC 滯留案例，分析判斷不同區域的 PSC 檢查重點和趨勢。',
         url: 'https://ttwonder.github.io/psc-atlas/',
         image: 'assets/screenshots/psc-atlas.png',
         badge: '已上線',
