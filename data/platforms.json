@@ -1,0 +1,35 @@
+[
+  {
+    "id": "fleet-inspection",
+    "title": "船隊檢查管理平台",
+    "subtitle": "Fleet Inspection",
+    "description": "集中管理船舶檢查、缺失追蹤、改善進度與作業紀錄，協助海技同仁快速掌握船隊現況。",
+    "url": "https://sski2468-hua.github.io/fleet-inspection/",
+    "image": "assets/screenshots/fleet-inspection.png",
+    "badge": "已上線",
+    "status": "online",
+    "meta": "船隊檢查 · 缺失追蹤"
+  },
+  {
+    "id": "maritime-regulations",
+    "title": "海事法規管理平台",
+    "subtitle": "Maritime Regulations",
+    "description": "整合海事法規、通函、追蹤事項與作業管理，支援法規更新、責任分工與辦理狀態檢視。",
+    "url": "https://ttwonder.github.io/maritime-regulations-github/",
+    "image": "assets/screenshots/maritime-regulations.png",
+    "badge": "內部使用",
+    "status": "restricted",
+    "meta": "法規追蹤 · 需內部密碼"
+  },
+  {
+    "id": "psc-atlas",
+    "title": "PSC Atlas 管理平台",
+    "subtitle": "PSC Atlas",
+    "description": "彙整 PSC 缺失、滯留與 GFD 相關資料，作為案例查詢、風險辨識與船隊防範改善的分析入口。",
+    "url": "https://ttwonder.github.io/psc-atlas/",
+    "image": "assets/screenshots/psc-atlas.png",
+    "badge": "已上線",
+    "status": "online",
+    "meta": "PSC · 缺失案例"
+  }
+]
