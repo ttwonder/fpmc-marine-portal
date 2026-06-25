@@ -96,87 +96,6 @@
 
     .topbar nav a:hover { color: #ffffff; background: rgba(255,255,255,.08); }
 
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 78% 18%, rgba(51,177,255,.24), transparent 30%),
-        radial-gradient(circle at 6% 6%, rgba(215,169,72,.22), transparent 28%),
-        linear-gradient(135deg, var(--marine-navy) 0%, var(--marine-navy-2) 58%, #132f50 100%);
-      color: #ffffff;
-      min-height: 560px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
-      background-size: 64px 64px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,.25));
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      width: min(100%, var(--max-width));
-      margin: 0 auto;
-      padding: 96px 32px 72px;
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
-      gap: 48px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 10px;
-      border: 1px solid rgba(255,255,255,.22);
-      background: rgba(255,255,255,.08);
-      color: #d0e2ff;
-      font-size: 13px;
-      letter-spacing: .48px;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      background: var(--success);
-      border-radius: 50%;
-      box-shadow: 0 0 0 5px rgba(36,161,72,.16);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(42px, 6vw, 76px);
-      font-weight: 300;
-      line-height: 1.05;
-      letter-spacing: -1.6px;
-    }
-
-    .hero-title-strong { font-weight: 500; color: #ffffff; }
-
-    .hero-copy {
-      max-width: 720px;
-      margin: 24px 0 0;
-      font-size: clamp(17px, 2vw, 20px);
-      line-height: 1.75;
-      color: #d0e2ff;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 36px;
-    }
 
     .button {
       min-height: 48px;
@@ -206,86 +125,15 @@
       border-color: rgba(255,255,255,.24);
     }
 
-    .button-secondary:hover { background: rgba(255,255,255,.18); transform: translateY(-1px); }
-
-    .hero-panel {
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.16);
-      backdrop-filter: blur(18px);
-      padding: 16px;
-    }
-
-    .panel-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #ffffff;
-      margin-bottom: 16px;
-      font-size: 14px;
-    }
-
-    .panel-header span:last-child {
-      font-family: 'IBM Plex Mono', monospace;
-      color: #d0e2ff;
-      font-size: 12px;
-    }
-
-    .metric-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.12);
-    }
-
-    .metric {
-      background: rgba(7,23,41,.74);
-      padding: 18px 14px;
-    }
-
-    .metric strong {
-      display: block;
-      font-size: 32px;
-      line-height: 1;
-      font-weight: 300;
-      color: #ffffff;
-    }
-
-    .metric span {
-      display: block;
-      margin-top: 10px;
-      color: #c6c6c6;
-      font-size: 12px;
-      letter-spacing: .32px;
-    }
-
-    .mini-list {
-      margin: 16px 0 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 8px;
-    }
-
-    .mini-list li {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 12px;
-      background: rgba(255,255,255,.08);
-      color: #d0e2ff;
-      font-size: 13px;
-    }
-
-    .mini-list b { color: #ffffff; font-weight: 500; }
-
     main { background: #ffffff; }
 
     .section {
       width: min(100%, var(--max-width));
       margin: 0 auto;
-      padding: 72px 32px;
+      padding: 56px 32px;
     }
+
+    #systems { padding-top: 40px; }
 
     .section-heading {
       display: grid;
@@ -539,7 +387,6 @@
     .error { border-left-color: #da1e28; }
 
     @media (max-width: 980px) {
-      .hero-inner { grid-template-columns: 1fr; padding-top: 72px; }
       .portal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .section-heading { grid-template-columns: 1fr; }
       .quick-note { max-width: none; }
@@ -549,18 +396,15 @@
     @media (max-width: 680px) {
       .topbar { padding: 0 16px; }
       .topbar nav { display: none; }
-      .hero-inner, .section { padding-left: 18px; padding-right: 18px; }
+      .section { padding-left: 18px; padding-right: 18px; }
       .portal-grid { grid-template-columns: 1fr; }
-      .metric-grid { grid-template-columns: 1fr; }
-      h1 { letter-spacing: -0.8px; }
-      .hero-actions .button { width: 100%; }
       footer { padding: 24px 18px; }
     }
   </style>
 </head>
 <body>
   <header class="topbar" aria-label="網站導覽列">
-    <a class="brand" href="#top" aria-label="回到首頁">
+    <a class="brand" href="#systems" aria-label="回到平台入口">
       <span class="brand-mark">FM</span>
       <span>台塑海技管理平台</span>
     </a>
@@ -569,39 +413,6 @@
       <a href="#maintenance">維護方式</a>
     </nav>
   </header>
-
-  <section class="hero" id="top">
-    <div class="hero-inner">
-      <div>
-        <div class="eyebrow">Formosa Marine Technical Portal</div>
-        <h1>統一入口，<br><span class="hero-title-strong">快速進入各項海技管理平台</span></h1>
-        <p class="hero-copy">
-          將船隊檢查、海事法規、PSC Atlas 等系統集中在同一個首頁，以網站快照與清楚按鈕呈現，方便同仁快速辨識、快速進入、穩定作業。
-        </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#systems">查看平台入口 <span aria-hidden="true">↓</span></a>
-          <a class="button button-secondary" href="#maintenance">了解如何新增 / 修改 <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-      <aside class="hero-panel" aria-label="入口平台摘要">
-        <div class="panel-header">
-          <span>平台摘要</span>
-          <span id="todayLabel">Portal</span>
-        </div>
-        <div class="metric-grid">
-          <div class="metric"><strong id="systemCount">3</strong><span>已整合系統</span></div>
-          <div class="metric"><strong>1</strong><span>統一入口</span></div>
-          <div class="metric"><strong>24H</strong><span>線上可用</span></div>
-        </div>
-        <ul class="mini-list">
-          <li><b>設計形式</b><span>快照卡片 + 進入按鈕</span></li>
-          <li><b>部署方式</b><span>GitHub Pages 免費上線</span></li>
-          <li><b>後續維護</b><span>修改 JSON 與圖片即可</span></li>
-        </ul>
-      </aside>
-    </div>
-  </section>
-
   <main>
     <section class="section" id="systems">
       <div class="section-heading">
@@ -692,12 +503,6 @@
     ];
 
     const grid = document.querySelector('#portalGrid');
-    const count = document.querySelector('#systemCount');
-    const todayLabel = document.querySelector('#todayLabel');
-
-    todayLabel.textContent = new Intl.DateTimeFormat('zh-TW', {
-      year: 'numeric', month: '2-digit', day: '2-digit'
-    }).format(new Date());
 
     function escapeHtml(value) {
       return String(value || '').replace(/[&<>'"]/g, char => ({
@@ -706,7 +511,6 @@
     }
 
     function renderPlatforms(platforms) {
-      count.textContent = platforms.length;
       grid.replaceChildren();
 
       platforms.forEach(platform => {
