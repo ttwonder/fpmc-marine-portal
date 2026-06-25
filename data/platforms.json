@@ -3,7 +3,7 @@
     "id": "fleet-inspection",
     "title": "船隊檢查管理平台",
     "subtitle": "Fleet Inspection",
-    "description": "集中管理船舶檢查缺失的匯總，有針對性的對缺失從不同維度進行分析，有根有據的進行主體性檢查和改善。",
+    "description": "集中管理船舶檢查缺失的匯總，有針對性的對缺失從不同維度進行分析，進行專題性檢查和改善。",
     "url": "https://sski2468-hua.github.io/fleet-inspection/",
     "image": "assets/screenshots/fleet-inspection.png",
     "badge": "已上線",
