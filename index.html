@@ -165,6 +165,21 @@
       font-size: 16px;
     }
 
+    .section-title-with-note {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .section-title-with-note span {
+      font-size: clamp(13px, 1.3vw, 16px);
+      font-weight: 600;
+      color: #da1e28;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
     .portal-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -432,7 +447,7 @@
     <section class="section" id="systems">
       <div class="section-heading">
         <div>
-          <h2>管理平台快速入口</h2>
+          <h2 class="section-title-with-note">管理平台快速入口 <span>公司辦公室內部管理使用，請勿外傳！</span></h2>
         </div>
       </div>
 
@@ -493,7 +508,7 @@
       },
       {
         id: 'maritime-regulations',
-        title: '海事法規管理平台',
+        title: '法規更新、外來信息鑒別管理平台',
         subtitle: 'Maritime Regulations',
         description: '整合國際海事法規、通函、外來信息，研判對公司管理和船隊的影響，公司各機能組處採取相應的措施。',
         url: 'https://ttwonder.github.io/maritime-regulations-github/',
@@ -504,7 +519,7 @@
       },
       {
         id: 'psc-atlas',
-        title: 'PSC Atlas 管理平台',
+        title: 'PSC 業內資訊管理平台',
         subtitle: 'PSC Atlas',
         description: '彙整業界 PSC 滯留案例，分析判斷不同區域的 PSC 檢查重點和趨勢。',
         url: 'https://ttwonder.github.io/psc-atlas/',

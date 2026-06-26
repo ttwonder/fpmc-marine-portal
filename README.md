@@ -5,8 +5,8 @@
 ## 已整合平台
 
 - 船隊檢查管理平台：<https://sski2468-hua.github.io/fleet-inspection/>
-- 海事法規管理平台：<https://ttwonder.github.io/maritime-regulations-github/>
-- PSC Atlas 管理平台：<https://ttwonder.github.io/psc-atlas/>
+- 法規更新、外來信息鑒別管理平台：<https://ttwonder.github.io/maritime-regulations-github/>
+- PSC 業內資訊管理平台：<https://ttwonder.github.io/psc-atlas/>
 
 > 注意：若平台本身需要密碼或權限，仍由該平台自行控管。入口首頁不公開顯示密碼。
 
