@@ -7,6 +7,8 @@
 - 船隊檢查管理平台：<https://sski2468-hua.github.io/fleet-inspection/>
 - 法規更新、外來信息鑒別管理平台：<https://ttwonder.github.io/maritime-regulations-github/>
 - PSC 業內資訊管理平台：<https://ttwonder.github.io/psc-atlas/>
+- SQMS 程序書修訂需求管理平台：<https://ttwonder.github.io/sqms-revision-system-ready/>
+- 月度安全會議報告平台：<https://ttwonder.github.io/monthly-safety-report-system/>
 
 > 注意：若平台本身需要密碼或權限，仍由該平台自行控管。入口首頁不公開顯示密碼。
 
