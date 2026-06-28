@@ -1,5 +1,16 @@
 [
   {
+    "id": "sqms-revision-system",
+    "title": "SQMS 程序書修訂需求管理平台",
+    "subtitle": "SQMS Revision Control",
+    "description": "管理 SQMS 程序書修訂需求、統計清單、待完成與已完成事項，協助修訂需求快速提出、追蹤和彙整。",
+    "url": "https://ttwonder.github.io/sqms-revision-system-ready/",
+    "image": "assets/screenshots/sqms-revision-system.png",
+    "badge": "已上線",
+    "status": "online",
+    "meta": "SQMS · 程序書修訂"
+  },
+  {
     "id": "fleet-inspection",
     "title": "船隊檢查管理平台",
     "subtitle": "Fleet Inspection",
@@ -33,19 +44,8 @@
     "meta": "PSC · 缺失案例"
   },
   {
-    "id": "sqms-revision-system",
-    "title": "SQMS 程序書修訂需求管理平台",
-    "subtitle": "SQMS Revision Control",
-    "description": "管理 SQMS 程序書修訂需求、統計清單、待完成與已完成事項，協助修訂需求快速提出、追蹤和彙整。",
-    "url": "https://ttwonder.github.io/sqms-revision-system-ready/",
-    "image": "assets/screenshots/sqms-revision-system.png",
-    "badge": "已上線",
-    "status": "online",
-    "meta": "SQMS · 程序書修訂"
-  },
-  {
     "id": "monthly-safety-report-system",
-    "title": "月度安全會議報告平台",
+    "title": "海技組報告管理平台",
     "subtitle": "Monthly Safety Report",
     "description": "彙整月度安全會議報告、KPI 趨勢、檢查數據與附件資料，支援報告編輯、輸出和資料記錄。",
     "url": "https://ttwonder.github.io/monthly-safety-report-system/",
