@@ -50,8 +50,8 @@
     "description": "彙整月度安全會議報告、KPI 趨勢、檢查數據與附件資料，支援報告編輯、輸出和資料記錄。",
     "url": "https://ttwonder.github.io/monthly-safety-report-system/",
     "image": "assets/screenshots/monthly-safety-report-system.png",
-    "badge": "已上線",
-    "status": "online",
-    "meta": "安全會議 · 月報管理"
+    "badge": "內部使用",
+    "status": "restricted",
+    "meta": "安全會議 · 需內部密碼"
   }
 ]
