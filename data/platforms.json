@@ -53,5 +53,27 @@
     "badge": "內部使用",
     "status": "restricted",
     "meta": "安全會議 · 需內部密碼"
+  },
+  {
+    "id": "tmsa-drybms-system",
+    "title": "公司系統級評估和改善平台",
+    "subtitle": "TMSA / DryBMS Assessment",
+    "description": "整合 TMSA、DryBMS 自評、檢查記錄與待改善項目，支援公司管理系統評估、改善追蹤與報告彙整。",
+    "url": "https://ttwonder.github.io/TMSA-DryBMS-system/",
+    "image": "assets/screenshots/tmsa-drybms-system.png",
+    "badge": "內部使用",
+    "status": "restricted",
+    "meta": "TMSA / DryBMS · 內部使用"
+  },
+  {
+    "id": "ship-dynamics-todo-system",
+    "title": "船舶動態與會議管理系統",
+    "subtitle": "Fleet Activities & Meetings",
+    "description": "整合船舶動態、航次行程、要事待辦與內控異常，支援早會、專題會議及報告管理。",
+    "url": "https://ttwonder.github.io/ship-dynamics-todo-system/",
+    "image": "assets/screenshots/ship-dynamics-todo-system.png",
+    "badge": "內部使用",
+    "status": "restricted",
+    "meta": "船舶動態 · 內部使用"
   }
 ]

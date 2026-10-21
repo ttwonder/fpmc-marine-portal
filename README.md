@@ -9,6 +9,8 @@
 - 法規更新、外來信息鑒別管理平台：<https://ttwonder.github.io/maritime-regulations-github/>
 - PSC 業內資訊管理平台：<https://ttwonder.github.io/psc-atlas/>
 - 海技組報告管理平台：<https://ttwonder.github.io/monthly-safety-report-system/>
+- 公司系統級評估和改善平台：<https://ttwonder.github.io/TMSA-DryBMS-system/>
+- 船舶動態與會議管理系統：<https://ttwonder.github.io/ship-dynamics-todo-system/>
 
 > 注意：若平台本身需要密碼或權限，仍由該平台自行控管。入口首頁不公開顯示密碼。
 
@@ -17,6 +19,8 @@
 可以先打開 `maintenance.html` 使用「系統維護」介面新增、修改或刪除平台資料，完成後下載新的 `platforms.json` 並覆蓋 `data/platforms.json`。
 
 也可以直接編輯 `data/platforms.json`，新增一筆資料：
+
+新增或修改後，請同步更新 `index.html` 的 `fallbackPlatforms` 備援清單，確保 JSON 載入失敗時仍顯示相同的平台。
 
 ```json
 {
