@@ -223,7 +223,7 @@
 
     .snapshot {
       position: relative;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 16 / 6;
       background:
         linear-gradient(135deg, rgba(15,98,254,.12), rgba(7,23,41,.18)),
         repeating-linear-gradient(90deg, #e0e0e0 0, #e0e0e0 1px, transparent 1px, transparent 32px);
@@ -252,15 +252,15 @@
 
     .status-badge {
       position: absolute;
-      top: 14px;
-      left: 14px;
+      top: 10px;
+      left: 10px;
       z-index: 2;
       display: inline-flex;
       align-items: center;
       gap: 7px;
       background: rgba(255,255,255,.94);
       color: var(--cds-text-primary);
-      padding: 6px 10px;
+      padding: 4px 8px;
       font-size: 12px;
       font-weight: 600;
       letter-spacing: .2px;
@@ -276,7 +276,7 @@
     .status-restricted .status-dot { background: var(--warning); }
 
     .portal-body {
-      padding: 24px;
+      padding: 16px;
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -287,7 +287,7 @@
       color: var(--cds-button-primary);
       font-size: 12px;
       line-height: 1.4;
-      margin-bottom: 14px;
+      margin-bottom: 6px;
     }
 
     .portal-title {
@@ -305,9 +305,9 @@
     }
 
     .portal-description {
-      margin: 18px 0 24px;
+      margin: 8px 0 12px;
       color: var(--cds-text-secondary);
-      line-height: 1.72;
+      line-height: 1.6;
       font-size: 15px;
       flex: 1;
     }
@@ -323,7 +323,8 @@
     .open-button {
       background: var(--marine-navy);
       color: #ffffff;
-      padding-inline: 16px;
+      min-height: 44px;
+      padding: 10px 16px;
       min-width: 150px;
     }
 
