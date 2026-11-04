@@ -1,5 +1,29 @@
 [
   {
+    "id": "vessel-portal",
+    "title": "船端檢查填報和資訊平台",
+    "subtitle": "Vessel Inspection & Information",
+    "description": "提供船端檢查填報、缺失自查、改善追蹤與公司文件查閱，集中查看待辦事項及船隊資訊。",
+    "url": "https://sski2468-hua.github.io/vessel-portal/?preview=B105",
+    "image": "assets/screenshots/vessel-portal.png",
+    "badge": "已上線",
+    "status": "online",
+    "meta": "船端檢查 · 填報與資訊",
+    "audience": "vessel"
+  },
+  {
+    "id": "ship-itinerary",
+    "title": "船端動態追蹤和內控異常提報平台",
+    "subtitle": "Vessel Itinerary & Internal Control",
+    "description": "更新本船航次行程與動態，追蹤配件、物料及工程，並提報內控異常、訴求與報告需求。",
+    "url": "https://ttwonder.github.io/ship-dynamics-todo-system/ship-itinerary.html",
+    "image": "assets/screenshots/ship-itinerary.png",
+    "badge": "已上線",
+    "status": "online",
+    "meta": "船端動態 · 內控異常提報",
+    "audience": "vessel"
+  },
+  {
     "id": "sqms-revision-system",
     "title": "SQMS 程序書修訂需求管理平台",
     "subtitle": "SQMS Revision Control",
@@ -8,51 +32,8 @@
     "image": "assets/screenshots/sqms-revision-system.png",
     "badge": "已上線",
     "status": "online",
-    "meta": "SQMS · 程序書修訂"
-  },
-  {
-    "id": "fleet-inspection",
-    "title": "船隊檢查管理平台",
-    "subtitle": "Fleet Inspection",
-    "description": "集中管理船舶檢查缺失的匯總，有針對性的對缺失從不同維度進行分析，進行專題性檢查和改善。",
-    "url": "https://sski2468-hua.github.io/fleet-inspection/",
-    "image": "assets/screenshots/fleet-inspection.png",
-    "badge": "已上線",
-    "status": "online",
-    "meta": "船隊檢查 · 缺失追蹤"
-  },
-  {
-    "id": "maritime-regulations",
-    "title": "法規更新、外來信息鑒別管理平台",
-    "subtitle": "Maritime Regulations",
-    "description": "整合國際海事法規、通函、外來信息，研判對公司管理和船隊的影響，公司各機能組處採取相應的措施。",
-    "url": "https://ttwonder.github.io/maritime-regulations-github/",
-    "image": "assets/screenshots/maritime-regulations.png",
-    "badge": "內部使用",
-    "status": "restricted",
-    "meta": "法規追蹤 · 需內部密碼"
-  },
-  {
-    "id": "psc-atlas",
-    "title": "PSC 業內資訊管理平台",
-    "subtitle": "PSC Atlas",
-    "description": "彙整業界 PSC 滯留案例，分析判斷不同區域的 PSC 檢查重點和趨勢。",
-    "url": "https://ttwonder.github.io/psc-atlas/",
-    "image": "assets/screenshots/psc-atlas.png",
-    "badge": "已上線",
-    "status": "online",
-    "meta": "PSC · 缺失案例"
-  },
-  {
-    "id": "monthly-safety-report-system",
-    "title": "海技組報告管理平台",
-    "subtitle": "Monthly Safety Report",
-    "description": "彙整月度安全會議報告、KPI 趨勢、檢查數據與附件資料，支援報告編輯、輸出和資料記錄。",
-    "url": "https://ttwonder.github.io/monthly-safety-report-system/",
-    "image": "assets/screenshots/monthly-safety-report-system.png",
-    "badge": "內部使用",
-    "status": "restricted",
-    "meta": "安全會議 · 需內部密碼"
+    "meta": "SQMS · 程序書修訂",
+    "audience": "vessel"
   },
   {
     "id": "tmsa-drybms-system",
@@ -63,7 +44,20 @@
     "image": "assets/screenshots/tmsa-drybms-system.png",
     "badge": "內部使用",
     "status": "restricted",
-    "meta": "TMSA / DryBMS · 內部使用"
+    "meta": "TMSA / DryBMS · 內部使用",
+    "audience": "office"
+  },
+  {
+    "id": "fleet-inspection",
+    "title": "船隊檢查管理平台",
+    "subtitle": "Fleet Inspection",
+    "description": "集中管理船舶檢查缺失的匯總，有針對性的對缺失從不同維度進行分析，進行專題性檢查和改善。",
+    "url": "https://sski2468-hua.github.io/fleet-inspection/",
+    "image": "assets/screenshots/fleet-inspection.png",
+    "badge": "已上線",
+    "status": "online",
+    "meta": "船隊檢查 · 缺失追蹤",
+    "audience": "office"
   },
   {
     "id": "ship-dynamics-todo-system",
@@ -74,6 +68,43 @@
     "image": "assets/screenshots/ship-dynamics-todo-system.png",
     "badge": "內部使用",
     "status": "restricted",
-    "meta": "船舶動態 · 內部使用"
+    "meta": "船舶動態 · 內部使用",
+    "audience": "office"
+  },
+  {
+    "id": "maritime-regulations",
+    "title": "法規更新、外來信息鑒別管理平台",
+    "subtitle": "Maritime Regulations",
+    "description": "整合國際海事法規、通函、外來信息，研判對公司管理和船隊的影響，公司各機能組處採取相應的措施。",
+    "url": "https://ttwonder.github.io/maritime-regulations-github/",
+    "image": "assets/screenshots/maritime-regulations.png",
+    "badge": "內部使用",
+    "status": "restricted",
+    "meta": "法規追蹤 · 需內部密碼",
+    "audience": "office"
+  },
+  {
+    "id": "psc-atlas",
+    "title": "PSC 業內資訊管理平台",
+    "subtitle": "PSC Atlas",
+    "description": "彙整業界 PSC 滯留案例，分析判斷不同區域的 PSC 檢查重點和趨勢。",
+    "url": "https://ttwonder.github.io/psc-atlas/",
+    "image": "assets/screenshots/psc-atlas.png",
+    "badge": "已上線",
+    "status": "online",
+    "meta": "PSC · 缺失案例",
+    "audience": "office"
+  },
+  {
+    "id": "monthly-safety-report-system",
+    "title": "海技組報告管理平台",
+    "subtitle": "Monthly Safety Report",
+    "description": "彙整月度安全會議報告、KPI 趨勢、檢查數據與附件資料，支援報告編輯、輸出和資料記錄。",
+    "url": "https://ttwonder.github.io/monthly-safety-report-system/",
+    "image": "assets/screenshots/monthly-safety-report-system.png",
+    "badge": "內部使用",
+    "status": "restricted",
+    "meta": "安全會議 · 需內部密碼",
+    "audience": "office"
   }
 ]

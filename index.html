@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="台塑海技管理平台統一入口：船隊檢查、法規更新、PSC 業內資訊、SQMS 修訂、月度安全報告、TMSA / DryBMS 評估改善及船舶動態與會議管理。" />
+  <meta name="description" content="台塑海技管理平台統一入口，分為船端使用與辦公室使用：船端檢查填報、船端動態與內控提報、SQMS 修訂、TMSA / DryBMS 評估改善、船隊檢查、船舶動態與會議、法規更新、PSC 業內資訊及海技組報告。" />
   <title>台塑海技管理平台｜Formosa Marine Portal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -179,6 +179,25 @@
       letter-spacing: 0;
       white-space: nowrap;
     }
+
+    .portal-groups {
+      display: grid;
+      gap: 28px;
+    }
+
+    .portal-group { min-width: 0; }
+
+    .portal-group-title {
+      margin: 0 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--cds-border-subtle);
+      color: var(--marine-navy);
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .portal-group[data-audience="vessel"] .snapshot img { object-position: top; }
 
     .portal-grid {
       display: grid;
@@ -447,11 +466,11 @@
     <section class="section" id="systems">
       <div class="section-heading">
         <div>
-          <h2 class="section-title-with-note">管理平台快速入口 <span>公司辦公室內部管理使用，請勿外傳！</span></h2>
+          <h2 class="section-title-with-note">管理平台快速入口 <span>公司內部使用，請勿外傳！</span></h2>
         </div>
       </div>
 
-      <div class="portal-grid" id="portalGrid" aria-live="polite">
+      <div class="portal-groups" id="portalGrid" aria-live="polite">
         <div class="loading">正在載入平台清單……</div>
       </div>
     </section>
@@ -470,7 +489,7 @@
         <div class="maintenance-grid">
           <div class="maintenance-card">
             <strong>新增平台</strong>
-            <p>在 <code>data/platforms.json</code> 新增一筆資料，填入平台名稱、說明、網址、快照路徑與狀態標籤，首頁會自動顯示。</p>
+            <p>在 <code>data/platforms.json</code> 新增一筆資料，填入平台名稱、說明、網址、快照路徑、使用分組與狀態標籤，首頁會按清單順序顯示在對應分組。</p>
           </div>
           <div class="maintenance-card">
             <strong>修改連結</strong>
@@ -495,83 +514,114 @@
 
   <script>
     const fallbackPlatforms = [
-      {
-            "id": "sqms-revision-system",
-            "title": "SQMS 程序書修訂需求管理平台",
-            "subtitle": "SQMS Revision Control",
-            "description": "管理 SQMS 程序書修訂需求、統計清單、待完成與已完成事項，協助修訂需求快速提出、追蹤和彙整。",
-            "url": "https://ttwonder.github.io/sqms-revision-system-ready/",
-            "image": "assets/screenshots/sqms-revision-system.png",
-            "badge": "已上線",
-            "status": "online",
-            "meta": "SQMS · 程序書修訂"
-      },
-      {
-            "id": "fleet-inspection",
-            "title": "船隊檢查管理平台",
-            "subtitle": "Fleet Inspection",
-            "description": "集中管理船舶檢查缺失的匯總，有針對性的對缺失從不同維度進行分析，進行專題性檢查和改善。",
-            "url": "https://sski2468-hua.github.io/fleet-inspection/",
-            "image": "assets/screenshots/fleet-inspection.png",
-            "badge": "已上線",
-            "status": "online",
-            "meta": "船隊檢查 · 缺失追蹤"
-      },
-      {
-            "id": "maritime-regulations",
-            "title": "法規更新、外來信息鑒別管理平台",
-            "subtitle": "Maritime Regulations",
-            "description": "整合國際海事法規、通函、外來信息，研判對公司管理和船隊的影響，公司各機能組處採取相應的措施。",
-            "url": "https://ttwonder.github.io/maritime-regulations-github/",
-            "image": "assets/screenshots/maritime-regulations.png",
-            "badge": "內部使用",
-            "status": "restricted",
-            "meta": "法規追蹤 · 需內部密碼"
-      },
-      {
-            "id": "psc-atlas",
-            "title": "PSC 業內資訊管理平台",
-            "subtitle": "PSC Atlas",
-            "description": "彙整業界 PSC 滯留案例，分析判斷不同區域的 PSC 檢查重點和趨勢。",
-            "url": "https://ttwonder.github.io/psc-atlas/",
-            "image": "assets/screenshots/psc-atlas.png",
-            "badge": "已上線",
-            "status": "online",
-            "meta": "PSC · 缺失案例"
-      },
-      {
-            "id": "monthly-safety-report-system",
-            "title": "海技組報告管理平台",
-            "subtitle": "Monthly Safety Report",
-            "description": "彙整月度安全會議報告、KPI 趨勢、檢查數據與附件資料，支援報告編輯、輸出和資料記錄。",
-            "url": "https://ttwonder.github.io/monthly-safety-report-system/",
-            "image": "assets/screenshots/monthly-safety-report-system.png",
-            "badge": "內部使用",
-            "status": "restricted",
-            "meta": "安全會議 · 需內部密碼"
-      },
-      {
-            "id": "tmsa-drybms-system",
-            "title": "公司系統級評估和改善平台",
-            "subtitle": "TMSA / DryBMS Assessment",
-            "description": "整合 TMSA、DryBMS 自評、檢查記錄與待改善項目，支援公司管理系統評估、改善追蹤與報告彙整。",
-            "url": "https://ttwonder.github.io/TMSA-DryBMS-system/",
-            "image": "assets/screenshots/tmsa-drybms-system.png",
-            "badge": "內部使用",
-            "status": "restricted",
-            "meta": "TMSA / DryBMS · 內部使用"
-      },
-      {
-            "id": "ship-dynamics-todo-system",
-            "title": "船舶動態與會議管理系統",
-            "subtitle": "Fleet Activities & Meetings",
-            "description": "整合船舶動態、航次行程、要事待辦與內控異常，支援早會、專題會議及報告管理。",
-            "url": "https://ttwonder.github.io/ship-dynamics-todo-system/",
-            "image": "assets/screenshots/ship-dynamics-todo-system.png",
-            "badge": "內部使用",
-            "status": "restricted",
-            "meta": "船舶動態 · 內部使用"
-      }
+  {
+    "id": "vessel-portal",
+    "title": "船端檢查填報和資訊平台",
+    "subtitle": "Vessel Inspection & Information",
+    "description": "提供船端檢查填報、缺失自查、改善追蹤與公司文件查閱，集中查看待辦事項及船隊資訊。",
+    "url": "https://sski2468-hua.github.io/vessel-portal/?preview=B105",
+    "image": "assets/screenshots/vessel-portal.png",
+    "badge": "已上線",
+    "status": "online",
+    "meta": "船端檢查 · 填報與資訊",
+    "audience": "vessel"
+  },
+  {
+    "id": "ship-itinerary",
+    "title": "船端動態追蹤和內控異常提報平台",
+    "subtitle": "Vessel Itinerary & Internal Control",
+    "description": "更新本船航次行程與動態，追蹤配件、物料及工程，並提報內控異常、訴求與報告需求。",
+    "url": "https://ttwonder.github.io/ship-dynamics-todo-system/ship-itinerary.html",
+    "image": "assets/screenshots/ship-itinerary.png",
+    "badge": "已上線",
+    "status": "online",
+    "meta": "船端動態 · 內控異常提報",
+    "audience": "vessel"
+  },
+  {
+    "id": "sqms-revision-system",
+    "title": "SQMS 程序書修訂需求管理平台",
+    "subtitle": "SQMS Revision Control",
+    "description": "管理 SQMS 程序書修訂需求、統計清單、待完成與已完成事項，協助修訂需求快速提出、追蹤和彙整。",
+    "url": "https://ttwonder.github.io/sqms-revision-system-ready/",
+    "image": "assets/screenshots/sqms-revision-system.png",
+    "badge": "已上線",
+    "status": "online",
+    "meta": "SQMS · 程序書修訂",
+    "audience": "vessel"
+  },
+  {
+    "id": "tmsa-drybms-system",
+    "title": "公司系統級評估和改善平台",
+    "subtitle": "TMSA / DryBMS Assessment",
+    "description": "整合 TMSA、DryBMS 自評、檢查記錄與待改善項目，支援公司管理系統評估、改善追蹤與報告彙整。",
+    "url": "https://ttwonder.github.io/TMSA-DryBMS-system/",
+    "image": "assets/screenshots/tmsa-drybms-system.png",
+    "badge": "內部使用",
+    "status": "restricted",
+    "meta": "TMSA / DryBMS · 內部使用",
+    "audience": "office"
+  },
+  {
+    "id": "fleet-inspection",
+    "title": "船隊檢查管理平台",
+    "subtitle": "Fleet Inspection",
+    "description": "集中管理船舶檢查缺失的匯總，有針對性的對缺失從不同維度進行分析，進行專題性檢查和改善。",
+    "url": "https://sski2468-hua.github.io/fleet-inspection/",
+    "image": "assets/screenshots/fleet-inspection.png",
+    "badge": "已上線",
+    "status": "online",
+    "meta": "船隊檢查 · 缺失追蹤",
+    "audience": "office"
+  },
+  {
+    "id": "ship-dynamics-todo-system",
+    "title": "船舶動態與會議管理系統",
+    "subtitle": "Fleet Activities & Meetings",
+    "description": "整合船舶動態、航次行程、要事待辦與內控異常，支援早會、專題會議及報告管理。",
+    "url": "https://ttwonder.github.io/ship-dynamics-todo-system/",
+    "image": "assets/screenshots/ship-dynamics-todo-system.png",
+    "badge": "內部使用",
+    "status": "restricted",
+    "meta": "船舶動態 · 內部使用",
+    "audience": "office"
+  },
+  {
+    "id": "maritime-regulations",
+    "title": "法規更新、外來信息鑒別管理平台",
+    "subtitle": "Maritime Regulations",
+    "description": "整合國際海事法規、通函、外來信息，研判對公司管理和船隊的影響，公司各機能組處採取相應的措施。",
+    "url": "https://ttwonder.github.io/maritime-regulations-github/",
+    "image": "assets/screenshots/maritime-regulations.png",
+    "badge": "內部使用",
+    "status": "restricted",
+    "meta": "法規追蹤 · 需內部密碼",
+    "audience": "office"
+  },
+  {
+    "id": "psc-atlas",
+    "title": "PSC 業內資訊管理平台",
+    "subtitle": "PSC Atlas",
+    "description": "彙整業界 PSC 滯留案例，分析判斷不同區域的 PSC 檢查重點和趨勢。",
+    "url": "https://ttwonder.github.io/psc-atlas/",
+    "image": "assets/screenshots/psc-atlas.png",
+    "badge": "已上線",
+    "status": "online",
+    "meta": "PSC · 缺失案例",
+    "audience": "office"
+  },
+  {
+    "id": "monthly-safety-report-system",
+    "title": "海技組報告管理平台",
+    "subtitle": "Monthly Safety Report",
+    "description": "彙整月度安全會議報告、KPI 趨勢、檢查數據與附件資料，支援報告編輯、輸出和資料記錄。",
+    "url": "https://ttwonder.github.io/monthly-safety-report-system/",
+    "image": "assets/screenshots/monthly-safety-report-system.png",
+    "badge": "內部使用",
+    "status": "restricted",
+    "meta": "安全會議 · 需內部密碼",
+    "audience": "office"
+  }
 ];
 
     const grid = document.querySelector('#portalGrid');
@@ -584,6 +634,26 @@
 
     function renderPlatforms(platforms) {
       grid.replaceChildren();
+
+      const audienceGrids = {};
+      [
+        { id: 'vessel', title: '船端使用' },
+        { id: 'office', title: '辦公室使用' }
+      ].forEach(group => {
+        const section = document.createElement('section');
+        section.className = 'portal-group';
+        section.dataset.audience = group.id;
+        const heading = document.createElement('h3');
+        heading.className = 'portal-group-title';
+        heading.id = `${group.id}-group-title`;
+        heading.textContent = group.title;
+        section.setAttribute('aria-labelledby', heading.id);
+        const cards = document.createElement('div');
+        cards.className = 'portal-grid';
+        audienceGrids[group.id] = cards;
+        section.append(heading, cards);
+        grid.append(section);
+      });
 
       platforms.forEach(platform => {
         const restricted = platform.status === 'restricted';
@@ -613,7 +683,7 @@
         meta.className = 'portal-meta';
         meta.textContent = platform.meta || platform.subtitle || '';
 
-        const title = document.createElement('h3');
+        const title = document.createElement('h4');
         title.className = 'portal-title';
         title.textContent = platform.title;
 
@@ -646,7 +716,8 @@
         footer.append(openButton, rawLink);
         body.append(meta, title, subtitle, description, footer);
         article.append(snapshot, body);
-        grid.append(article);
+        const audience = platform.audience === 'vessel' ? 'vessel' : 'office';
+        audienceGrids[audience].append(article);
       });
     }
 

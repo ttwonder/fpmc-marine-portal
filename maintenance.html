@@ -133,6 +133,12 @@
             <label>標籤<input id="badge" placeholder="已上線 / 內部使用"></label>
             <label>分類文字<input id="meta" placeholder="PSC · 缺失案例"></label>
           </div>
+          <label>使用分組
+            <select id="audience">
+              <option value="vessel">船端使用</option>
+              <option value="office">辦公室使用</option>
+            </select>
+          </label>
           <div class="actions">
             <button class="btn primary" type="submit">套用修改</button>
             <button class="btn ghost" type="button" id="addButton">新增空白平台</button>
@@ -153,7 +159,7 @@
   <script>
     let platforms = [];
     let selectedIndex = 0;
-    const fields = ['id', 'title', 'subtitle', 'description', 'url', 'image', 'badge', 'status', 'meta'];
+    const fields = ['id', 'title', 'subtitle', 'description', 'url', 'image', 'badge', 'status', 'meta', 'audience'];
     const list = document.querySelector('#platformList');
     const preview = document.querySelector('#jsonPreview');
 
@@ -178,7 +184,11 @@
 
     function fillForm() {
       const platform = current() || {};
-      fields.forEach(field => { byId(field).value = platform[field] || ''; });
+      fields.forEach(field => {
+        byId(field).value = field === 'audience'
+          ? (platform.audience === 'vessel' ? 'vessel' : 'office')
+          : platform[field] || '';
+      });
     }
 
     function readForm() {
@@ -190,7 +200,7 @@
     }
 
     function renderAll() {
-      if (!platforms.length) platforms.push({ id: 'new-platform', title: '新平台', subtitle: '', description: '', url: '', image: 'assets/screenshots/new-platform.png', badge: '已上線', status: 'online', meta: '' });
+      if (!platforms.length) platforms.push({ id: 'new-platform', title: '新平台', subtitle: '', description: '', url: '', image: 'assets/screenshots/new-platform.png', badge: '已上線', status: 'online', meta: '', audience: 'office' });
       selectedIndex = Math.max(0, Math.min(selectedIndex, platforms.length - 1));
       renderList();
       fillForm();
@@ -204,7 +214,7 @@
     });
 
     byId('addButton').addEventListener('click', () => {
-      platforms.push({ id: 'new-platform', title: '新平台', subtitle: '', description: '', url: 'https://', image: 'assets/screenshots/new-platform.png', badge: '已上線', status: 'online', meta: '' });
+      platforms.push({ id: 'new-platform', title: '新平台', subtitle: '', description: '', url: 'https://', image: 'assets/screenshots/new-platform.png', badge: '已上線', status: 'online', meta: '', audience: 'office' });
       selectedIndex = platforms.length - 1;
       renderAll();
     });
